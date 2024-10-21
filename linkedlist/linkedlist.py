@@ -92,7 +92,7 @@ class LinkedList:
             return
         current_node = self.head
         count = 0
-        while current_node.next and count > position-1:
+        while current_node.next and count < position-1:
             current_node = current_node.next
             count+=1
         temp_node = current_node.next
