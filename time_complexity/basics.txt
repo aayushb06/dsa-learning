@@ -1,0 +1,17 @@
+- complexity [a,b] = b-a+1
+           (a,b) = b-a
+
+sum of n terms = (n(2a+(n-1)d))/2d
+sum of n terms (GP) = (ar^(n-1))/(r-1)
+
+- Big O notation
+    - neglect the lower order terms
+    - neglect constant coefficients
+
+O(1) < logn < sqrt(n) < n < nlogn < n*sqrt(n) < n^2 < 2^n < n!
+
+- Asymptotic analysis
+    performance analysis of algo using larger input data
+
+- Time limit exceed 
+    reduce no of iterations
