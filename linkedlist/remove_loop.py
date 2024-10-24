@@ -43,3 +43,62 @@ Explanation 2:
 
  Chain of 4->6 is broken.
 """
+
+
+class Node:
+    def __init__(self, value):
+        self.value = value
+        self.next = None
+        
+
+def remove_cycle(head):
+    if not head or not head.next:
+        return head
+    slow_ptr = head
+    fast_ptr = head
+    while fast_ptr and fast_ptr.next:
+        slow_ptr = slow_ptr.next
+        fast_ptr = fast_ptr.next.next
+        if slow_ptr == fast_ptr:
+            print("cycle detected")
+            break
+    else:
+        print("no cycle detected")
+        return -1
+    fast_ptr.next = None
+
+
+def print_ll(head):
+    current_node = head
+    result = ''
+    while current_node:
+        result = result + " "+ str(current_node.value) if result else str(current_node.value)
+        current_node = current_node.next
+    print(result)
+
+
+if __name__ == '__main__':
+    head = Node(1)
+    second = Node(2)
+    third = Node(3)
+    forth = Node(4)
+    fifth = Node(5)
+    head.next = second
+    second.next = third
+    third.next = forth
+    forth.next = fifth
+    fifth.next = second
+    remove_cycle(head)
+    print_ll(head)
+    
+    head = Node(1)
+    second = Node(2)
+    third = Node(3)
+    forth = Node(4)
+    fifth = Node(5)
+    head.next = second
+    second.next = third
+    third.next = forth
+    forth.next = fifth
+    remove_cycle(head)
+    print_ll(head)
