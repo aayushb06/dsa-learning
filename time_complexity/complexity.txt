@@ -153,7 +153,9 @@
    for i in range(n):
         for j in range(i // 2):
             # O(1) operation
-
+=> (n(n-1)/2)/2 iterations
+=> O(n^2) time complexity
+=> O(1) space complexity
 ------------------------------------------------------------------------------------------------------
 19) k = 0
 for i in range(n//2, n+1):
@@ -161,7 +163,9 @@ for i in range(n//2, n+1):
     while j<=n:
          k = k + n//2
          j = j * 2
-
+=> n/2(logn) iterations
+=> O(nlogn) time complexity
+=> O(1) space complexity
 ------------------------------------------------------------------------------------------------------
 20) The complexity of Binary search algorithm is: O(logn)
 ------------------------------------------------------------------------------------------------------
@@ -170,6 +174,9 @@ while (i > 0) {
     a += i; 
     i /= 2; 
 }
+=> logn iterations
+=> O(logn) time complexity
+=> O(1) space complexity
 
 ------------------------------------------------------------------------------------------------------
 22) If an algorithm has a time complexity of O(1), then the complexity of it is ?
@@ -218,7 +225,8 @@ all of the mentioned
 for i in range(3,n/3,3):
 	for j in range(2,n/2,2):
 		# O(1)
-
+=> n/9 * n/4 iterations
+=> O(n^2) time complexity
 ------------------------------------------------------------------------------------------------------
 29) TC ?
 def solve():
@@ -234,19 +242,37 @@ O(n)
 O(n sqrt(n))
 O(n^2)
 None of the above
+=> none of the above as outer loop is infinite loop
 ------------------------------------------------------------------------------------------------------
-30) TC ?
+30) What will be the Time Complexity of the given code?
+i = 0
+while i*i <=N:
+	for j in range(N+1):
+		for k in range(N+1):
+			i += 1
+
+	i += 1
+
+O(NlogN)
+O(N^3)
+O(N^2 sqrt(N))
+O(N^2)
+None of these
+=> iterations = sqrt(n)/n^2
+=> O(n^2) time complexity
+------------------------------------------------------------------------------------------------------
+31) TC ?
 for i in range(n):
 	j = i-1
 	ans=0
 	while(j>=0):
 		ans = ans+i+j
 		j+=1
-=>
+=> inner infinite loop
 ------------------------------------------------------------------------------------------------------
-31) TC ?
+32) TC ?
 for i in range(N):
 	for j in range(i,N):
 		break
-=> O(1)
+=> O(n)
 ------------------------------------------------------------------------------------------------------
